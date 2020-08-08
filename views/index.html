@@ -1,0 +1,179 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add this androidjs.js file to your html file to get the functionality of android js -->
+  <script type="text/javascript" src = "../assets/androidjs.js"></script>
+  <script>front.on('some-info', function(msg)
+              {
+                //window.alert(msg);
+                console.log(msg);
+                document.getElementById("some-info").innerHTML=msg;
+ 
+            })
+
+            front.on('blocks-info', function(msg)
+              {
+                //window.alert(msg);
+                console.log(msg);
+                document.getElementById("blocks-info").innerHTML=msg;
+ 
+            })
+
+            front.on('block-hash-info', function(msg)
+              {
+                //window.alert(msg);
+                console.log(msg);
+                document.getElementById("block-hash").innerHTML=msg;
+ 
+            })
+
+            front.on('transaction-id', function(msg)
+              {
+                //window.alert(msg);
+                console.log(msg);
+                document.getElementById("transaction-:id").innerHTML=msg;
+ 
+            })
+
+            front.on('address-info', function(msg)
+              {
+                //window.alert(msg);
+                console.log(msg);
+                document.getElementById("address-:address").innerHTML=msg;
+
+            })
+
+            front.on('unspentTrans', function(msg)
+              {
+                //window.alert(msg);
+                console.log(msg);
+                document.getElementById("unspent").innerHTML=msg;
+
+            })
+
+            front.on('myunspent', function(msg)
+              {
+                //window.alert(msg);
+                console.log(msg);
+                document.getElementById("myunspent").innerHTML=msg;
+
+            })
+
+
+            front.on('myunspent', function(msg)
+              {
+                //window.alert(msg);
+                console.log(msg);
+                document.getElementById("myunspent").innerHTML=msg;
+
+            })
+
+            front.on('raw-info', function(msg)
+              {
+                //window.alert(msg);
+                console.log(msg);
+                document.getElementById("rawblock").innerHTML=msg;
+
+            })
+
+
+            front.on('mine-block', function(msg)
+              {
+                //window.alert(msg);
+                console.log(msg);
+                document.getElementById("mine-block").innerHTML=msg;
+ 
+            })
+
+
+            front.on('know-peers', function(msg)
+              {
+                //window.alert(msg);
+                console.log(msg);
+                document.getElementById("know-peers").innerHTML=msg;
+ 
+            })
+
+
+            front.on('add-peers', function(msg)
+              {
+                //window.alert(msg);
+                console.log(msg);
+                document.getElementById("add-peers").innerHTML=msg;
+ 
+            })
+
+
+
+            front.on('math-result', function(msg)
+              {
+                //window.alert(msg);
+                console.log(msg);
+                document.getElementById("add-peers").innerHTML=msg;
+ 
+            })
+
+            front.on('debug-info', function(msg)//Added.
+              {
+                //window.alert(msg);
+                console.log('debug-info: '+msg);
+                //document.getElementById("debug-info").innerHTML=msg; // Can you figure out a way to make this append (ex: document.getElementById("debug-info").innerHTML+=msg;)
+ 
+            })
+
+            </script>
+  <title>Dewblock Test</title>
+</head>
+<body>
+  <h1 align="center" style=color:black;width:50%;;border:solid;margin:auto;padding:50px;background-color:gray>Dewblock</h1>
+  <!--<p style=color:black;>-->
+   <!--<script> front.on('some-info', function(msg){<p>(msg)</p>}) </script>-->
+   <!--<p class="some-info">Try to chnage by Clicking</p>-->
+   <div class="content">
+      <!--<span class="" id = "author" contenteditable="">Chhekur</span>-->
+     <!---- <h1 class="title" id = "title" contenteditable="">Stranger Things: The sound of the Upside Down</h1>-->
+      <p class="debug-info" id="debug-info"contenteditable="">Debug</p>
+      <p class="some-info" id = "some-info" contenteditable="">Click</p>
+      <p class="blocks" id = "blocks"contenteditable="">Click Block</p>
+      <p class="mine-block" id = "mine-block"contenteditable="">Mine Block</p>
+      <p class="know-peers" id = "know-peers"contenteditable="">Query Peers</p>
+      <p class="add-peers" id = "add-peers"contenteditable="">Add Peers</p>
+      <p class="math-result" id="math-result"contenteditable="">Calculation</p>
+      <p class="block-hash" id="block-hash"contenteditable="">Block Hash</p>
+      <p class="transaction-:id" id="transaction-:id"contenteditable="">Transaction ID</p>
+      <p class="address-:address" id=""contenteditable="">Address Info</p>
+      <p class="unspent" id=""contenteditable="">Unspent Trans</p>
+      <p class="myunspent" id=""contenteditable="">My UnspentTrans</p>
+      <p class="rawblock" id=""contenteditable="rawblock">Raw Block</p>
+    </div>
+   <button type="button" onclick='console.log(app.getPath("userData"));front.send("init-p2p", "6001")'>Start P2P Server</button>
+   <button type="button" onclick='front.send("init-wallet",app.getPath("userData"))'>Wallet</button>
+   <button type="button" onclick='front.send("mineBlock", "Some data to the first block")'>Mine Block</button>
+   <!--<button type="button" onclick='front.send("test", "Give me Something")'>Click Me</button>-->
+   <button type="button" onclick='front.send("blocks", "Block Info")'>Click Block</button>
+   <button type="button" onclick='front.send("peers", "Know the Peers")'>Query Peers</button>
+   <button type="button" onclick='front.send("addPeer", "ws://localhost:6001")'>Add Peers</button>
+   <button type="button" onclick='front.send("block-hash", "Sweet2020")'>Block Hash</button>
+   <button type="button" onclick='front.send("transaction-id", "T123456")'>Transaction ID</button>
+   <button type="button" onclick='front.send("address-:address", "Ad789123")'>Address Info</button>
+   <button type="button" onclick='front.send("unspentTransactionOutputs")'>Unspent </button>
+   <button type="button" onclick='front.send("myUnspentTransactionOutputs")'>My unspent</button>
+   <button type="button" onclick='front.send("mineRawBlock")'>My unspent</button>
+   <!--<button type="button" onclick='front.send("math", 2,3)'>Calculate</button>-->
+
+</body>
+
+<script>
+
+// define function to get the data from storage if file already saved
+
+window.onload = function(){
+  //front.send('test');
+  //front.send('get-data', app.getPath('userData'));
+  //front.send('some-info', 'On Load is called');
+  //front.send('some info',)
+}
+
+</script>
+
+</html>
